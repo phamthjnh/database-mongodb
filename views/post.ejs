@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= post.title %></title>
+</head>
+<body>
+    <form method="POST" action="/update-blog">
+        <input type="hidden" id="postID" name="postID" value="<%= post._id %>">
+        <input type="text" id="postDate" name="postDate" value="<%= post.date %>">
+        <input type="text" id="postTitle" name="postTitle" value="<%= post.title %>">
+        <input type="text" id="postDescription" name="postDescription" value="<%= post.description %>">
+        <input type="text" id="postImg" name="postImg" value="<%= post.img %>">
+        <button type="submit">Update</button>
+    </form>
+    <form method="POST" action="/delete-blog">
+        <input type="hidden" id="postID" name="postID" value="<%= post._id %>">
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>

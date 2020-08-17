@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techmaster</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Roboto, Arial, Helvetica, sans-serif
+        }
+        div {
+            display: block;
+            max-width:100% ;
+            box-shadow: 0 2px 5px rgba(0,0,0,.15);
+            padding: 10px;
+            margin: 15px;
+        }
+        img {
+            width: 100%;
+        }
+        a {
+            display: block;
+            max-width:50% ;
+            text-decoration: none;
+            color: black;
+            margin: auto;
+        }
+        form {
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <form action="/new-post" method="POST">
+        <input type="text" name="img" placeholder="image link">
+        <input type="text" name="date" placeholder="date">
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="description" placeholder="description">
+        <button type="submit">new post</button>
+    </form>
+    <% for(let i=0; i < result.length; i++) { %>
+    <a href="/blog/<%=result[i]._id %>">
+      <div>
+          <img src="<%=result[i].img%>">
+          <p><%=result[i].date %></p>
+          <p><b><%=result[i].title %></b></p>
+          <p><%=result[i].description %></p>
+      </div>  
+    </a>
+    <% } %>
+    
+</body>
+</html>
